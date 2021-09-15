@@ -16,7 +16,3 @@ Format Code
 ```bash
 mvn spotless:apply
 ```
-
-## Author
-
-Sergio Bilello - sergio.bilello@zoom.us
