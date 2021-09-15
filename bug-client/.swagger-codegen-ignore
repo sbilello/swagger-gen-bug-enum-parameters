@@ -1,0 +1,30 @@
+# Swagger Codegen Ignore
+# Lines beginning with a # are comments
+
+# This should match build.sh located anywhere.
+build.sh
+
+/build.sh
+/.travis.yml
+/build.sbt
+/git_push.sh
+/gradlew
+/gradlew.bat
+/.gitignore
+/.swagger-codegen
+/gradle
+/gradle/*
+gradle.properties
+gen
+src/main/AndroidManifest.xml
+.swagger-codegen/VERSION
+
+
+# Exclude all recursively
+/docs
+/docs/*
+pom.xml
+build.gradle
+gradle/
+settings.gradle
+

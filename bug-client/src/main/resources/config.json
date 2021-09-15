@@ -1,0 +1,5 @@
+{
+  "modelPackage": "us.test.openapi.graphql.model",
+  "apiPackage": "us.test.openapi.graphql.client",
+  "library": "resttemplate"
+}
