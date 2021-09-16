@@ -6,7 +6,6 @@ package us.test.openapi.graphql.client;
 
 import org.apache.logging.log4j.util.Strings;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import us.test.openapi.graphql.api.MockRestTemplateServerTest;
@@ -44,8 +43,10 @@ public class CreateMeetingApiTest extends MockRestTemplateServerTest {
     String userId = "me";
     RequestCreateMeeting body = new RequestCreateMeeting();
     body.setTopic("ciao");
-    ResponseCreateMeeting response = api.createMeeting(userId, body);
-    Assert.assertEquals(expectedResponse, JsonHelper.toJson(response).orElse(Strings.EMPTY));
+    ResponseCreateMeeting response =
+        api.createMeeting(userId, body);
+    Assert.assertEquals(expectedResponse,
+        JsonHelper.toJson(response).orElse(Strings.EMPTY));
   }
 
 

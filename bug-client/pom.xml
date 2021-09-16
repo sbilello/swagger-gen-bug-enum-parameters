@@ -20,6 +20,15 @@
     <artifactId>bug-client</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>bug-client</name>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>oss.sonatype.org-snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
@@ -44,6 +53,7 @@
             <plugin>
                 <groupId>io.swagger.codegen.v3</groupId>
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <!-- this can be fixed after merging https://github.com/swagger-api/swagger-codegen/issues/11166-->
                 <version>3.0.27</version>
                 <executions>
                     <execution>
@@ -63,5 +73,6 @@
                 </executions>
             </plugin>
         </plugins>
+
     </build>
 </project>
