@@ -1,0 +1,16 @@
+﻿/target/
+/bin/
+/.classpath
+/.project
+/.settings
+.idea/
+.scannerwork/
+openapi-clients.iml
+common-client/target
+meetings-client/.swagger-codegen
+meetings-client/target
+meetings-client/meetings-client.iml
+settings-client/.swagger-codegen
+settings-client/target
+settings-client/settings-client.iml
+common-client/common-client.iml
