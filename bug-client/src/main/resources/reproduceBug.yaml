@@ -1,0 +1,96 @@
+openapi: 3.0.3
+servers: []
+info:
+  description: Nested Objct Sample.
+  version: "1.0.0"
+  title: Nested Object
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: nestedObject
+    description: Everything about your Pets
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+  - name: store
+    description: Access to Petstore orders
+  - name: user
+    description: Operations about user
+    externalDocs:
+      description: Find out more about our store
+      url: 'http://swagger.io'
+paths:
+  /nestedObject:
+    get:
+      operationId: checkNestedObject
+      parameters:
+        - name: nestedObject
+          in: query
+          description: nested object.
+          required: true
+          style: deepObject
+          schema:
+            $ref: '#/components/schemas/NestedObject'
+      responses:
+        200:
+          description: good
+
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'
+components:
+  schemas:
+    ObjectWithEnum:
+      type: object
+      description: The base meeting object.
+      properties:
+        topic:
+          type: string
+          description: The meeting's topic.
+        type:
+          type: integer
+          description: |-
+            The type of meeting:
+            * `1` — An instant meeting.
+            * `2` — A scheduled meeting.
+            * `3` — A recurring meeting with no fixed time.
+            * `8` — A recurring meeting with fixed time.
+          default: 2
+          #### THIS CAUSES PROBLEM IN THE SERIALIZATION BECAUSE THE ENUMS VALUES ARE NUMBERS AND NOT STRINGS
+          enum:
+            - 1
+            - 2
+            - 3
+            - 8
+          x-enum-descriptions:
+            - Instant meeting.
+            - Scheduled meeting.
+            - Recurring meeting with no fixed time.
+            - Recurring meeting with fixed time.
+    Parakeet:
+      type: object
+      properties:
+        color:
+          type: string
+        soundRepeater:
+          type: boolean
+
+    NestedObject:
+      type: object
+      properties:
+        name:
+          type: string
+        types:
+          type: array
+          items:
+            type: string
+        parakeet:
+          $ref: '#/components/schemas/Parakeet'
+        count:
+          type: integer
+        enable:
+          type: boolean

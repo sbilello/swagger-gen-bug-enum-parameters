@@ -22,6 +22,7 @@
 
     <build>
         <plugins>
+            <!--
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
@@ -37,7 +38,7 @@
                         <phase>compile</phase>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -156,8 +157,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>${java.source.version}</source>
-                    <target>${java.target.version}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <verbose>true</verbose>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -316,14 +318,12 @@
         <!-- Not upgrade to JDK 16 until https://github.com/jknack/handlebars.java/issues/735 is solved.
         It becomes a RunTimeException on Java 16 https://github.com/int128/gradle-swagger-generator-plugin/issues/221
         -->
-        <java.source.version>15</java.source.version>
-        <java.target.version>15</java.target.version>
-        <maven.compiler.release>15</maven.compiler.release>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
-        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>

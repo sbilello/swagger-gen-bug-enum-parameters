@@ -54,7 +54,7 @@
                 <groupId>io.swagger.codegen.v3</groupId>
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
                 <!-- this can be fixed after merging https://github.com/swagger-api/swagger-codegen/issues/11166-->
-                <version>3.0.27</version>
+                <version>3.0.29-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <goals>
@@ -65,7 +65,7 @@
                             <!-- If you need to upgrade an existing class please set to FALSE -->
                             <skipOverwrite>true</skipOverwrite>
                             <output>./</output>
-                            <inputSpec>${project.parent.basedir}/bug-client/src/main/resources/meeting.yaml</inputSpec>
+                            <inputSpec>${project.parent.basedir}/bug-client/src/main/resources/reproduceBug.yaml</inputSpec>
                             <language>java</language>
                             <configurationFile>${project.parent.basedir}/bug-client/src/main/resources/config.json</configurationFile>
                         </configuration>
